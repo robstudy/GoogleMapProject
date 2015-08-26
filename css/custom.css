@@ -6,4 +6,7 @@ html, body {
 
 #map {
 	height: 100%;
+	margin-top:0;
+	position: static;
 }
+
