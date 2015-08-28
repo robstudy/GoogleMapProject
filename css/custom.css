@@ -10,3 +10,8 @@ html, body {
 	position: static;
 }
 
+.searchBar {
+	position: absolute;
+	right: 0px;
+	width: 25%;
+}
