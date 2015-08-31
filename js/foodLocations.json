@@ -1,0 +1,24 @@
+var foodPlaces = {
+	"restaurant": [
+		{
+			"title": "Ooi",
+			"location": "840 Herndon Ave, Clovis, CA 93612"
+		},
+		{
+			"title": "I Love Sushi",
+			"location": "465 W Shaw Ave, Clovis, CA 93612"
+		}, 
+		{
+			"title": "Fleurichi Express Sushi",
+			"location": "1936 Clovis Ave, Clovis, CA 93612"
+		},
+		{
+			"title": "Mr.Sushi#2",
+			"location": "1305 N Willow Ave, Clovis, CA 93612"
+		},
+		{
+			"title": "KuniSama",
+			"location":  "6825 N Willow Ave Suite 101, Fresno, CA 93710"
+		}
+	]
+}
