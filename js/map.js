@@ -1,6 +1,8 @@
 var map;
 function initMap(){
+
 	var locations;
+
 	//location information
 	function locationInformation(){
 		var locations = [];
@@ -19,24 +21,19 @@ function initMap(){
 	});
 
 	//Markers
-	var marker = new google.maps.Marker({
-		animation: google.maps.Animation.DROP,
-		position: {lat: 36.8362263, lng: -119.699005},
-		title: 'Ooi Sushi'
-	});
-	marker.addListener('click', toggleBounce);
-	marker.setMap(map);
-
-	//MAP toggle
-	function toggleBounce(){
-		if (marker.getAnimation() !== null) {
-			marker.setAnimation(null);
-		} else {
-			marker.setAnimation(google.maps.Animation.BOUNCE);
+	function addMarkers(){
+		for (var spots in foodPlaces.restaurant){
+			var marker = new google.maps.Marker({
+				animation: google.maps.Animation.DROP,
+				position: {lat: foodPlaces.restaurant[spots].lat, lng: foodPlaces.restaurant[spots].lng},
+				title: foodPlaces.restaurant[spots].title
+			});
+			marker.setMap(map);
 		}
 	}
 
 	locations = locationInformation();
+	addMarkers();
 };
 
 

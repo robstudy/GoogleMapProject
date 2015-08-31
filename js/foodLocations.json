@@ -2,23 +2,63 @@ var foodPlaces = {
 	"restaurant": [
 		{
 			"title": "Ooi",
-			"location": "840 Herndon Ave, Clovis, CA 93612"
+			"location": "840 Herndon Ave, Clovis, CA 93612",
+			"lat": 36.8362263,
+			"lng": -119.699005
 		},
 		{
 			"title": "I Love Sushi",
-			"location": "465 W Shaw Ave, Clovis, CA 93612"
+			"location": "465 W Shaw Ave, Clovis, CA 93612",
+			"lat": 36.808773,
+			"lng": -119.7196507
 		}, 
 		{
 			"title": "Fleurichi Express Sushi",
-			"location": "1936 Clovis Ave, Clovis, CA 93612"
+			"location": "1936 Clovis Ave, Clovis, CA 93612",
+			"lat": 36.8087809,
+			"lng": -119.7006488
 		},
 		{
 			"title": "Mr.Sushi#2",
-			"location": "1305 N Willow Ave, Clovis, CA 93612"
+			"location": "1305 N Willow Ave, Clovis, CA 93612",
+			"lat": 36.8535849,
+			"lng": -119.728049
 		},
 		{
 			"title": "KuniSama",
-			"location":  "6825 N Willow Ave Suite 101, Fresno, CA 93710"
+			"location":  "6825 N Willow Ave Suite 101, Fresno, CA 93710",
+			"lat": 36.835913,
+			"lng": -119.7299802
+		},
+		{
+			"title": "Tsing-Tao Chinese Restaurant",
+			"location": "711 W Shaw Ave, Clovis, CA 93612",
+			"lat": 36.8100692,
+			"lng": -119.7252894
+		},
+		{
+			"title": "Kowloon Kitchen",
+			"location": "651 Shaw Ave, Clovis, CA 93612",
+			"lat": 36.8086043,
+			"lng": -119.7014161
+		},
+		{
+			"title": "Great Wall Chinese Cuisine",
+			"location": "1785 Herndon Ave, Clovis, CA 93611",
+			"lat": 36.8383246,
+			"lng": -119.6847152
+		},
+		{
+			"title": "Great Wall Chinese Cuisine",
+			"location": "2220 Herndon Ave #506, Clovis, CA 93611",
+			"lat": 36.837084,
+			"lng": -119.6743964
+		},
+		{
+			"title": "Oriental Restaurant",
+			"location": "2141 Shaw Ave #109, Clovis, CA 93611",
+			"lat": 36.8100315,
+			"lng": -119.6749349
 		}
 	]
 }
