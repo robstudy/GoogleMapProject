@@ -52,13 +52,13 @@ function initMap(){
 	addMarkers();
 
 	//list functions
-	function listLocals(){
+	/*function listLocals(){
 		for (var item in foodPlaces.restaurant) {
 			$('.searchMenu').append("<a href='#'>" + foodPlaces.restaurant[item].title + "<p>" +
 			foodPlaces.restaurant[item].location + "</p></a><hr>");
 		};
 	}
-	listLocals();
+	listLocals();*/
 };
 
 

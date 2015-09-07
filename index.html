@@ -11,10 +11,19 @@
 
 	<nav class="searchMenu" id="menuBar">
 		<a href="#"><p></p><p></p><hr></a>
+		<!--added from tutorial -->
+		<ul data-bind="template: {name: 'foodLocations', foreach: foodLocations}"></ul>
+		<script type="text/html" id="foodLocations">
+			<li>
+				<strong data-bind="text: title"></strong>
+				<p><span data-bind="text: location"></span></p>
+				<hr>
+			</li>
+		</script>
 	</nav>
 		<div class="searchBar">
-			<form class="input-group" method="get">
-				<input data-bind="options: foodLocations" type="text" class="form-control" placeholder="Japanese and Chinese Food">
+			<form class="input-group" action="#">
+				<input data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off" type="text" class="form-control" placeholder="Japanese and Chinese Food">
 				<span class="input-group-btn">
 					<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
 				</span>
@@ -31,10 +40,9 @@
 	<script 
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBl81cW_Nm4M_nl5x3qtno511IE_S3GG5o&callback=initMap" 
 	async defer></script>
-
     <!--bootstrap, jquery, knockout, js files-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 	<script async type="text/javascript" src="js/viewmodel.js"></script>
 	<script src="https://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
