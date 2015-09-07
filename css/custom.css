@@ -19,17 +19,18 @@ html, body {
 }
 
 .searchMenu {
-	background: #000; /*white*/
+	background: #fff; /*white*/
 	height: 100%;
 	width: 25%;
 	right: 0px;
 	position: fixed;
 	z-index: 1;
+	overflow: scroll;
 }
 
 .searchMenu a {
 	display: block;
-	color: #fff;
+	color: #000;
 	font-size: 1.1em;
 	font-weight: 300;
 }

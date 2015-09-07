@@ -43,13 +43,22 @@ function initMap(){
 		});
 
 		google.maps.event.addListener(marker, 'click', function(){
-			infowindow = new google.maps.InfoWindow({content: place.title});
+			infowindow = new google.maps.InfoWindow({content: place.title + "<br>" + place.location});
 			infowindow.open(map, marker);
 		});
 	};
 
 	locations = locationInformation();
 	addMarkers();
+
+	//list functions
+	function listLocals(){
+		for (var item in foodPlaces.restaurant) {
+			$('.searchMenu').append("<a href='#'>" + foodPlaces.restaurant[item].title + "<p>" +
+			foodPlaces.restaurant[item].location + "</p></a><hr>");
+		};
+	}
+	listLocals();
 };
 
 
