@@ -7,11 +7,30 @@ html, body {
 #map {
 	height: 100%;
 	margin-top:0;
+	margin-right: 25%;
 	position: static;
 }
+
 
 .searchBar {
 	position: absolute;
 	right: 0px;
 	width: 25%;
 }
+
+.searchMenu {
+	background: #000; /*white*/
+	height: 100%;
+	width: 25%;
+	right: 0px;
+	position: fixed;
+	z-index: 1;
+}
+
+.searchMenu a {
+	display: block;
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: 300;
+}
+

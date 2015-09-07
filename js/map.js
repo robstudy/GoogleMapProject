@@ -18,7 +18,7 @@ function initMap(){
 
 	//Map initial location
 	map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 14,
+		zoom: 13,
 		center: clovis,
 		disableDefaultUI: true
 	});
