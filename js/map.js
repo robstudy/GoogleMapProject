@@ -1,20 +1,6 @@
-var map;
 function initMap(){
-
-	var locations;
-
+	var map;
 	var clovis = {lat: 36.8253, lng: -119.7031};
-
-	//location information
-	function locationInformation(){
-		var locations = [];
-
-		for (var spots in foodPlaces.restaurant){
-			locations.push(foodPlaces.restaurant[spots].location);
-		}
-		console.log(locations);
-		return locations;
-	};
 
 	//Map initial location
 	map = new google.maps.Map(document.getElementById('map'), {
@@ -24,10 +10,8 @@ function initMap(){
 	});
 
 	//Markers
-	function addMarkers(){
-		for (var spots in foodPlaces.restaurant){
-			createMarker(foodPlaces.restaurant[spots]);
-		}
+	for (var spots in foodPlaces.restaurant){
+		createMarker(foodPlaces.restaurant[spots]);
 	};
 
 	//NewCreate Markers
@@ -47,22 +31,5 @@ function initMap(){
 			infowindow.open(map, marker);
 		});
 	};
-
-	locations = locationInformation();
-	addMarkers();
-
-	//list functions
-	/*function listLocals(){
-		for (var item in foodPlaces.restaurant) {
-			$('.searchMenu').append("<a href='#'>" + foodPlaces.restaurant[item].title + "<p>" +
-			foodPlaces.restaurant[item].location + "</p></a><hr>");
-		};
-	}
-	listLocals();*/
 };
 
-
-//solution https://developers.google.com/maps/documentation/javascript/examples/places-searchbox
-var input = document.getElementById('pac-input');
-var searchBox = new google.maps.places.SearchBox(input);
-map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
