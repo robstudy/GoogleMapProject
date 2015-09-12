@@ -1,6 +1,8 @@
 function initMap(){
+	var infowindow = new google.maps.InfoWindow({});
 	var map;
 	var clovis = {lat: 36.8253, lng: -119.7031};
+	var allMarkers = [];
 
 	//Map initial location
 	map = new google.maps.Map(document.getElementById('map'), {
@@ -28,7 +30,7 @@ function initMap(){
 
 		google.maps.event.addListener(marker, 'click', function(){
 			infowindow = new google.maps.InfoWindow({content: place.title + "<br>" + place.location});
-			infowindow.open(map, marker);
+			infowindow.open(map, this);
 		});
 	};
 };
