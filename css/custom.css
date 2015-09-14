@@ -20,6 +20,8 @@ ul {
 	position: absolute;
 	right: 0px;
 	width: 25%;
+	height: 15%;
+	z-index: 1;
 }
 
 .searchMenu {

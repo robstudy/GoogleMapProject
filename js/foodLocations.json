@@ -49,7 +49,7 @@ var foodPlaces = {
 			"lng": -119.6847152
 		},
 		{
-			"title": "Great Wall Chinese Cuisine",
+			"title": "China Town",
 			"location": "2220 Herndon Ave #506, Clovis, CA 93611",
 			"lat": 36.837084,
 			"lng": -119.6743964

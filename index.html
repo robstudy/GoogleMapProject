@@ -15,15 +15,17 @@
 		<ul data-bind="template: {name: 'foodLocations', foreach: foodLocations}"></ul>
 		<script type="text/html" id="foodLocations">
 			<li>
+				<a href="#" data-bind="click:$parent.openInfo">
 				<strong data-bind="text: title"></strong>
 				<p><span data-bind="text: location"></span></p>
+				</a>
 				<hr>
 			</li>
 		</script>
 	</nav>
 		<div class="searchBar">
 			<form class="input-group" action="#">
-				<input data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off" type="text" class="form-control" placeholder="Japanese and Chinese Food">
+				<input type="search" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off" class="form-control" placeholder="Japanese and Chinese Food">
 				<span class="input-group-btn">
 					<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
 				</span>
@@ -36,7 +38,6 @@
 
 	<!--Map JS files -->
 	<script src="js/foodLocations.json"></script>
-	<script src="js/map.js"></script>
 	<script 
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBl81cW_Nm4M_nl5x3qtno511IE_S3GG5o&callback=initMap" 
 	async defer></script>
@@ -45,7 +46,8 @@
 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 	<script async type="text/javascript" src="js/viewmodel.js"></script>
-	<script src="js/bower_components/oauth-signature/dist/oauth-signature.js"></script>
+  	<script src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
   	<script src="https://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
+  	<script src="js/map.js"></script>
 </body>
 </html>
