@@ -10,7 +10,6 @@
 <body>
 
 	<nav class="searchMenu" id="menuBar">
-		<a href="#"><p></p><p></p><hr></a>
 		<!--added from tutorial -->
 		<ul data-bind="template: {name: 'foodLocations', foreach: foodLocations}"></ul>
 		<script type="text/html" id="foodLocations">
@@ -38,16 +37,17 @@
 
 	<!--Map JS files -->
 	<script src="js/foodLocations.json"></script>
+	<script src="js/map.js"></script>
+	<script async type="text/javascript" src="js/viewmodel.js"></script>
+	<!--Google Maps Link-->
 	<script 
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBl81cW_Nm4M_nl5x3qtno511IE_S3GG5o&callback=initMap" 
 	async defer></script>
-    <!--bootstrap, jquery, knockout, js files-->
+    <!--CDNs for bootstrap, jquery, knockout, oauth, sha1 files-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
-	<script async type="text/javascript" src="js/viewmodel.js"></script>
   	<script src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
   	<script src="https://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
-  	<script src="js/map.js"></script>
 </body>
 </html>

@@ -8,6 +8,10 @@ ul {
 	list-style: none;
 }
 
+strong {
+	font-size: 24px;
+}
+
 #map {
 	height: 100%;
 	margin-top:0;
@@ -18,7 +22,7 @@ ul {
 
 .searchBar {
 	position: absolute;
-	right: 0px;
+	left: 0px;
 	width: 25%;
 	height: 15%;
 	z-index: 1;
@@ -29,7 +33,7 @@ ul {
 	height: 100%;
 	width: 25%;
 	right: 0px;
-	font-size: 30px;
+	font-size: 14px;
 	position: fixed;
 	z-index: 1;
 	overflow: scroll;

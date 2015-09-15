@@ -59,6 +59,42 @@ var foodPlaces = {
 			"location": "2141 Shaw Ave #109, Clovis, CA 93611",
 			"lat": 36.8100315,
 			"lng": -119.6749349
+		},
+		{
+			"title": "Japanese Kitchen Steak-Seafood",
+			"location": "711 W Shaw Ave #107, Clovis, CA 93612",
+			"lat": 36.8099738,
+			"lng": -119.7251761
+		},
+		{
+			"title": "Kijima Japanese Restaurant",
+			"location": "300 W Shaw Ave # 100, Clovis, CA 93612",
+			"lat": 36.8077628,
+			"lng": -119.7168251
+		},
+		{
+			"title": "Tokyo Steak House",
+			"location": "1865 Herndon Ave, Clovis, CA 93611",
+			"lat": 36.8386963,
+			"lng": -119.6816765
+		},
+		{
+			"title": "Zeni-Ya Japanese Fast Food",
+			"location": "7712 N First St, Fresno, CA 93720",
+			"lat": 36.8504054,
+			"lng": -119.7738943
+		},
+		{
+			"title": "Sendai Sushi",
+			"location": "8064 N Cedar Ave, Fresno, CA 93720",
+			"lat": 36.8532583,
+			"lng": -119.755357
+		},
+		{
+			"title": "Sushi N Pop",
+			"location": "1788 E Barstow Ave Fresno, CA 93710",
+			"lat": 36.816625,
+			"lng": -119.754466
 		}
 	]
 }
