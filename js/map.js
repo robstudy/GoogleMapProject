@@ -3,7 +3,6 @@ var allMarkers = [];
 
 function startMap(){
 	var infowindow = new google.maps.InfoWindow({});
-	var windowContent = '';
 	var clovis = {lat: 36.8253, lng: -119.7031};
 
 	//Map initial location
@@ -40,10 +39,9 @@ function startMap(){
 		});
 
 		google.maps.event.addListener(marker, 'click', function(){
-			getYelpData(place);
 			resetAllMarkers();
 			setClicked();
-			infowindow.setContent(windowContent);
+			getYelpData(place);
 			infowindow.open(map, this);
 		});
 
@@ -131,15 +129,16 @@ function startMap(){
 	        'dataType' : 'jsonp',
 	        'jsonpCallback' : 'cb',
 	        'success' : function(data){
-	            console.log(data);
-	            var holdData = data.businesses[0];
-	            var name, rating, img, phoneNumber, holdString;
-	            name = '<h3>' + holdData.name + '</h3><br>';
-	            rating = '<img src=' + holdData.rating_img_url + '><br>';
-	            img = '<img src=' + holdData.image_url + '><br>';
-	            phoneNumber = '<p>' + holdData.display_phone + '</p>';
-	            holdString = name + rating + img + phoneNumber;
-	            windowContent = holdString;
+	        	var holdData = data.businesses[0];
+	        	var name, rating, img, phoneNumber, snippet, snipPic, holdString;
+		            name = '<h1 class="text-center">' + holdData.name + '</h1><br>';
+		            phoneNumber = '<h3 class="text-center">' + holdData.display_phone + '</h3>';
+		            rating = '<img src=' + holdData.rating_img_url_large + ' class="img-responsive img-center"><br>';
+		            img = '<a href=' + holdData.url + '><img src=' + holdData.image_url + ' class="img-main img-responsive img-center"></a><br>';
+		            snipPic = '<div class="img-left"><img src=' + holdData.snippet_image_url + '></div>';
+		            snippet = '<p class="align-right">' + holdData.snippet_text + '</p>';
+		            holdString = name + phoneNumber + rating + img + snipPic + snippet;
+		        infowindow.setContent(holdString);
 	        }
 	    });
 	}

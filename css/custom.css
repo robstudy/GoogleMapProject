@@ -19,6 +19,25 @@ strong {
 	position: static;
 }
 
+.img-main{
+	height: 3500px;
+	width: 300px;
+}
+
+.img-center {
+	margin: 0 auto;
+}
+
+.img-left{
+	height: 20px;
+	width: 40px;
+	float:left;
+}
+
+.align-right {
+	width: 175px;
+	float: right;
+}
 
 .searchBar {
 	position: absolute;
@@ -30,6 +49,7 @@ strong {
 
 .searchMenu {
 	background: #fff; /*white*/
+	border-style: solid;
 	height: 100%;
 	width: 25%;
 	right: 0px;
