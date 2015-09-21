@@ -1,8 +1,9 @@
 var map;
 var allMarkers = [];
 
-function initMap(){
+function startMap(){
 	var infowindow = new google.maps.InfoWindow({});
+	var windowContent = '';
 	var clovis = {lat: 36.8253, lng: -119.7031};
 
 	//Map initial location
@@ -19,7 +20,6 @@ function initMap(){
 
 	//NewCreate Markers
 	function createMarker(place){
-
 		//create a blue marker for google maps
 		var azureImage = {
 			url: 'img/azure.png',
@@ -40,10 +40,10 @@ function initMap(){
 		});
 
 		google.maps.event.addListener(marker, 'click', function(){
+			getYelpData(place);
 			resetAllMarkers();
 			setClicked();
-			var contentString = place.title + "<br>" + place.location;
-			infowindow.setContent(contentString);
+			infowindow.setContent(windowContent);
 			infowindow.open(map, this);
 		});
 
@@ -83,43 +83,68 @@ function initMap(){
 		allMarkers.push(marker);
 	};
 
-	//OATUH as found in https://github.com/bettiolo/oauth-signature-js
-	/*var httpMethod = 'GET',
-		yelp_url = 'http://api.yelp.com/v2/business/',
-		parameters = {
-			oauth_consumer_key: 'rAf_1-qI-AMixiABXuySng',
-			oauth_token: '43-6kJ5la1xKegLdE_nzoESLmEGXw4Xd',
-			oauth_nonce: 'kllo9940pd9333jh',
-			oauth_timestamp: Math.floor(Date.now()/1000),
-			oath_signature_method: 'HMAC-SHA1',
-			oath_version: '1.0',
-		},
-		consumerSecret = 't6WlnqnsT6o1yOfhCDlV2bENlbI',
-		tokenSecret = 'ZU8_bhU-B9u4c11dTYcUSdgOepc',
-		//Generates a RFC 3986 encoded, BASE64 encoded HMAC-SHA1 hash
-		encodedSignature = oauthSignature.generate(httpMethod, yelp_url, parameters, consumerSecret,
-			tokenSecret),
-		signature = oauthSignature.generate(httpMethod, yelp_url, parameters, consumerSecret, tokenSecret,
-			{encodedSignature: false});
+	function getYelpData(location) {
+	    /*Authenticiations for yelp data
+	    * solution found https://groups.google.com/forum/#!searchin/yelp-developer-support/javascript/yelp-developer-support/5bDrWXWJsqY/YWvrzC_Oe-gJ
+	    */
+	    var auth = {
+	                consumerKey : "rAf_1-qI-AMixiABXuySng",
+	                consumerSecret : "t6WlnqnsT6o1yOfhCDlV2bENlbI",
+	                accessToken : "vs_eTqnCGp5ri8TAVmSk3OAHDJTqi267",
+	                accessTokenSecret : "dJAILnXMfDAklk1swn7pGx0E99E",
+	                serviceProvider : {
+	                    signatureMethod : "HMAC-SHA1"
+	                }
+	            };
+	    
+	    //accessors
+	    var accessor = {
+	        consumerSecret : auth.consumerSecret,
+	        tokenSecret : auth.accessTokenSecret
+	    };
+	    
+	    //Parameters list to pass to JSON object
+	    var parameters = [];
+	    parameters.push(['term', location.title]);
+	    parameters.push(['location', location.location]);
+	    parameters.push(['callback', 'cb']);
+	    parameters.push(['oauth_consumer_key', auth.consumerKey]);
+	    parameters.push(['oauth_consumer_secret', auth.consumerSecret]);
+	    parameters.push(['oauth_token', auth.accessToken]);
+	    parameters.push(['oauth_signature_method', 'HMAC-SHA1']);
 
-	var requestUrl;
-	var getYelp = function(place){
-		requestUrl = yelp_url + '?term=' + place.title + '&location=' + place.location;
-		console.log(requestUrl);
-		$.ajax({
-			method: "GET",
-			url : requestUrl,
-			dataType: 'jsonp',
-			success: function(){
-				console.log("success");
-			},
-			error: function(){
-				alert('Sorry, not gonna work');
-			}
-		})
-	};
+	    //JSON method
+	    var message = {
+	        'action' : 'http://api.yelp.com/v2/search',
+	        'method' : 'GET',
+	        'parameters' : parameters
+	    };
+	    
+	    OAuth.setTimestampAndNonce(message);
+	    OAuth.SignatureMethod.sign(message, accessor);
+	    
+	    var parameterMap = OAuth.getParameterMap(message.parameters);
 
-	getYelp(foodPlaces.restaurant[0]);*/
+	    $.ajax({
+	        'url' : message.action,
+	        'data' : parameterMap,
+	        'dataType' : 'jsonp',
+	        'jsonpCallback' : 'cb',
+	        'success' : function(data){
+	            console.log(data);
+	            var holdData = data.businesses[0];
+	            var name, rating, img, phoneNumber, holdString;
+	            name = '<h3>' + holdData.name + '</h3><br>';
+	            rating = '<img src=' + holdData.rating_img_url + '><br>';
+	            img = '<img src=' + holdData.image_url + '><br>';
+	            phoneNumber = '<p>' + holdData.display_phone + '</p>';
+	            holdString = name + rating + img + phoneNumber;
+	            windowContent = holdString;
+	        }
+	    });
+	}
 };
+
+startMap();
 
 
