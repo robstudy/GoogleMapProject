@@ -77,24 +77,6 @@ var foodPlaces = {
 			"location": "1865 Herndon Ave, Clovis, CA 93611",
 			"lat": 36.8386963,
 			"lng": -119.6816765
-		},
-		{
-			"title": "Zeni-Ya Japanese Fast Food",
-			"location": "7712 N First St, Fresno, CA 93720",
-			"lat": 36.8504054,
-			"lng": -119.7738943
-		},
-		{
-			"title": "Sendai Sushi",
-			"location": "8064 N Cedar Ave, Fresno, CA 93720",
-			"lat": 36.8532583,
-			"lng": -119.755357
-		},
-		{
-			"title": "Sushi N Pop",
-			"location": "1788 E Barstow Ave Fresno, CA 93710",
-			"lat": 36.816625,
-			"lng": -119.754466
 		}
 	]
 }

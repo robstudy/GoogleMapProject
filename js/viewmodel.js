@@ -1,6 +1,7 @@
 var vm = {
 	foodLocations: ko.observableArray(foodPlaces.restaurant.slice(0)),
 	query: ko.observable(''),
+	//click method triggers click even on markers
 	openInfo: function(entry){
 		var holdIndex = foodPlaces.restaurant.indexOf(entry);
 		google.maps.event.trigger(allMarkers[holdIndex], "click");
