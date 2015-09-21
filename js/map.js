@@ -17,10 +17,10 @@ function startMap(){
 	//Markers
 	function createAllMarkers(){
       for (var spots in foodPlaces.restaurant){
-        if(allMarkers.length < foodPlaces.restaurant.length){
-        createMarker(foodPlaces.restaurant[spots]);
-        }
-     }
+	        if(allMarkers.length < foodPlaces.restaurant.length){
+	        createMarker(foodPlaces.restaurant[spots]);
+	        }
+     	}
 	}
 
 	//NewCreate Markers
