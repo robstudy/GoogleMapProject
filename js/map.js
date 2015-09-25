@@ -16,11 +16,9 @@ function startMap(){
 
 	//Markers
 	function createAllMarkers(){
-      for (var spots in foodPlaces.restaurant){
-	        if(allMarkers.length < foodPlaces.restaurant.length){
-	        createMarker(foodPlaces.restaurant[spots]);
-	        }
-     	}
+     	foodPlaces.restaurant.forEach(function(spot){
+     		createMarker(spot);
+     	});
 	}
 
 	createAllMarkers();
@@ -58,12 +56,12 @@ function createMarker(place){
 
 	//reset markers function
 	function resetAllMarkers(){
-		for(var x in allMarkers){
-			if (allMarkers[x].clicked === true) {
-				allMarkers[x].clicked = false;
-				allMarkers[x].setIcon(azureImage);
+		allMarkers.forEach(function(x){
+			if (x.clicked === true) {
+				x.clicked = false;
+				x.setIcon(azureImage);
 			}
-		}
+		});
 	}
 
 	//keep track of marker clicks
@@ -163,7 +161,7 @@ function updateInfoWindow(holdData){
 }
 
 //remove add markers tutorial https://developers.google.com/maps/documentation/javascript/examples/marker-remov
-//clears items from allMarkers array
+//clears items from allMarkers array, for use in viewModel.js
 function clearMarkers(){
 	allMarkers.forEach(function(i){
 		i.setMap(null);
