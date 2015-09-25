@@ -9,10 +9,12 @@ var vm = {
 	search: function(value){
 		//remove all the current locations, which removes them from the view
 		vm.foodLocations.removeAll();
-
+		clearMarkers();
 		for(var x in foodPlaces.restaurant){
 			if (foodPlaces.restaurant[x].title.toLowerCase().indexOf(value.toLowerCase()) >=0) {
 				vm.foodLocations.push(foodPlaces.restaurant[x]);
+				//push restaurant back into allMarkers array by calling createMarker
+				createMarker(foodPlaces.restaurant[x]);
 			}
 		}
 	}
