@@ -20,7 +20,7 @@ strong {
 }
 
 .img-main{
-	height: 3500px;
+	height: 400px;
 	width: 300px;
 }
 
@@ -42,7 +42,7 @@ strong {
 .searchBar {
 	position: absolute;
 	left: 0px;
-	width: 25%;
+	width: 30%;
 	height: 15%;
 	z-index: 1;
 }
@@ -51,7 +51,7 @@ strong {
 	background: #fff; /*white*/
 	border-style: solid;
 	height: 100%;
-	width: 25%;
+	width: 30%;
 	right: 0px;
 	font-size: 14px;
 	position: fixed;
@@ -66,14 +66,29 @@ strong {
 	font-weight: 300;
 }
 
-@media only screen and (max-width: 650px){
+@media only screen and (max-width: 750px){
 	.img-center, .img-left{
 		height: 0;
 		width: 0;
 		display: none;
 	}
 	.align-right {
+		width: 250px;
 		margin: 0 auto;
+	}
+	.text-center {
+		font-size: 1em;
+		margin-bottom: 0;
+	}
+	strong {
+		font-size: 1.8em;
+	}
+	.searchMenu a {
+		font-size: .7em;
+		overflow-y: hidden;
+	}
+	.searchBar{
+		width: 70%;
 	}
 }
 
