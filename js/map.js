@@ -1,6 +1,7 @@
 //Global variables
 var map;
 var allMarkers = [];
+var holdLastYelpCall = [];
 var infowindow = new google.maps.InfoWindow({});
 
 //initiation of map and markers
@@ -9,7 +10,7 @@ function startMap(){
 
 	//Map initial location
 	map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 14,
+		zoom: 13,
 		center: clovis,
 		disableDefaultUI: true
 	});
@@ -52,6 +53,12 @@ function createMarker(place){
 		setClicked();
 		getYelpData(place);
 		infowindow.open(map, this);
+		//Per https://forum.jquery.com/topic/catching-a-jsonp-error JQuery cannot handle
+		//jsonp errors, if there is no lastYelpCallBack, infowindow takes information from foodLocations.json
+		if (infowindow.getMap() && holdLastYelpCall.length === 0) {
+			infowindow.setContent('<p class="text-center">' + place.title + '</p><br>' + place.location);
+		}
+		holdLastYelpCall = [];
 	});
 
 	//reset markers function
@@ -143,6 +150,7 @@ function getYelpData(location) {
 	    'jsonpCallback' : 'cb',
 	    'success' : function(data){
 	        updateInfoWindow(data.businesses[0]);
+	        holdArray = data;
 	    }
 	});
 }
@@ -150,9 +158,9 @@ function getYelpData(location) {
 //Business passes to updateInfoWindow to convert array into HTML
 function updateInfoWindow(holdData){
 	var name, rating, img, phoneNumber, snippet, snipPic, holdString;
-		name = '<h1 class="text-center">' + holdData.name + '</h1><hr>';
-		phoneNumber = '<h3 class="text-center">' + holdData.display_phone + '</h3>';
-		rating = '<img src=' + holdData.rating_img_url_large + ' class="img-responsive img-center"><br>';
+		name = '<h2 class="text-center">' + holdData.name + '</h2><hr>';
+		phoneNumber = '<h4 class="text-center">' + holdData.display_phone + '</h4>';
+		rating = '<img src=' + holdData.rating_img_url + ' class="img-responsive img-center"><br>';
 		img = '<a href=' + holdData.url + '><img src=' + holdData.image_url + ' class="img-main img-responsive img-center"></a><br>';
 		snipPic = '<div class="img-left"><img src=' + holdData.snippet_image_url + '></div>';
 		snippet = '<p class="align-right">' + holdData.snippet_text + '</p>';

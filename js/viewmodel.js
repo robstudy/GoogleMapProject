@@ -26,4 +26,3 @@ var vm = {
 ko.applyBindings(vm);
 
 vm.query.subscribe(vm.search);
-
