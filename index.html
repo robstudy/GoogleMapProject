@@ -34,7 +34,7 @@
 	<div id="map"></div>
 
 	<!--Google Maps Link-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBl81cW_Nm4M_nl5x3qtno511IE_S3GG5o"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBl81cW_Nm4M_nl5x3qtno511IE_S3GG5o&callback=startMap"></script>
     <!--CDNs for bootstrap, jquery, knockout, oauth, sha1 files-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
@@ -42,7 +42,7 @@
   	<script src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
   	<!--Map files, viewmodel, JSON objects for list -->
   	<script src="js/foodLocations.json"></script>
-  	<script src="js/map.js"></script>
-  	<script src="js/viewmodel.js"></script>
+  	<script async src="js/map.js"></script>
+  	<script async src="js/viewmodel.js"></script>
 </body>
 </html>

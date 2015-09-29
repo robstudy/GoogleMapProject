@@ -2,10 +2,11 @@
 var map;
 var allMarkers = [];
 var holdLastYelpCall = [];
-var infowindow = new google.maps.InfoWindow({});
+var infowindow;
 
 //initiation of map and markers
 function startMap(){
+	infowindow = new google.maps.InfoWindow({});
 	var clovis = {lat: 36.8253, lng: -119.7031};
 
 	//Map initial location
@@ -52,6 +53,8 @@ function createMarker(place){
 		resetAllMarkers();
 		setClicked();
 		getYelpData(place);
+		//center map just above marker so infowindow displays properly
+		map.setCenter({lat: place.lat + .04 , lng: place.lng});
 		infowindow.open(map, this);
 		//Per https://forum.jquery.com/topic/catching-a-jsonp-error JQuery cannot handle
 		//jsonp errors, if there is no lastYelpCallBack, infowindow takes information from foodLocations.json
@@ -176,6 +179,5 @@ function clearMarkers(){
 	});
 }
 
-startMap();
 
 
