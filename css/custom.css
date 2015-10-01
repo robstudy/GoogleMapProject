@@ -77,13 +77,16 @@ strong {
 		margin: 0 auto;
 	}
 	.text-center {
+		padding: 0;
 		font-size: 1em;
 		margin-bottom: 0;
 	}
 	strong {
+		padding: 0;
 		font-size: 1.8em;
 	}
 	.searchMenu a{
+		padding: 0;
 		font-size: .7em;
 		overflow-y: hidden;
 	}

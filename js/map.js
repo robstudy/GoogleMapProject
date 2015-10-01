@@ -1,7 +1,7 @@
 //Global variables
 var map;
 var allMarkers = [];
-var holdLastYelpCall = [];
+var didYelpCall;
 var infowindow;
 
 //initiation of map and markers
@@ -18,11 +18,10 @@ function startMap(){
 
 	//Markers
 	function createAllMarkers(){
-     	foodPlaces.restaurant.forEach(function(spot){
-     		createMarker(spot);
-     	});
+		foodPlaces.restaurant.forEach(function(spot){
+			createMarker(spot);
+		});
 	}
-
 	createAllMarkers();
 }
 
@@ -52,16 +51,16 @@ function createMarker(place){
 	google.maps.event.addListener(marker, 'click', function(){
 		resetAllMarkers();
 		setClicked();
+		//Per https://forum.jquery.com/topic/catching-a-jsonp-error JQuery cannot handle
+		//jsonp errors, if there is no lastYelpCallBack, infowindow takes information from foodLocations.json
+		if (infowindow.getMap() && didYelpCall === false) {
+			infowindow.setContent('<p class="text-center">' + place.title + '</p><br>' + place.location);
+		}
 		getYelpData(place);
 		//center map just above marker so infowindow displays properly
 		map.setCenter({lat: place.lat + .04 , lng: place.lng});
 		infowindow.open(map, this);
-		//Per https://forum.jquery.com/topic/catching-a-jsonp-error JQuery cannot handle
-		//jsonp errors, if there is no lastYelpCallBack, infowindow takes information from foodLocations.json
-		if (infowindow.getMap() && holdLastYelpCall.length === 0) {
-			infowindow.setContent('<p class="text-center">' + place.title + '</p><br>' + place.location);
-		}
-		holdLastYelpCall = [];
+		didYelpCall = false;
 	});
 
 	//reset markers function
@@ -169,6 +168,7 @@ function updateInfoWindow(holdData){
 		snippet = '<p class="align-right">' + holdData.snippet_text + '</p>';
 		holdString = name + phoneNumber + rating + img + snipPic + snippet;
 	infowindow.setContent(holdString);
+	didYelpCall = true;
 }
 
 //remove add markers tutorial https://developers.google.com/maps/documentation/javascript/examples/marker-remov
