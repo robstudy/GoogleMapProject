@@ -52,7 +52,7 @@ function createMarker(place){
 		resetAllMarkers();
 		setClicked();
 		//Per https://forum.jquery.com/topic/catching-a-jsonp-error JQuery cannot handle
-		//jsonp errors, if there is no lastYelpCallBack, infowindow takes information from foodLocations.json
+		//jsonp errors, if there is no yelp call, infowindow takes information from foodLocations.json
 		if (infowindow.getMap() && didYelpCall === false) {
 			infowindow.setContent('<p class="text-center">' + place.title + '</p><br>' + place.location);
 		}
