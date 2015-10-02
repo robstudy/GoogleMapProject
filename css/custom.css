@@ -1,96 +1,102 @@
-html, body { 
-	height: 100%;
-	margin: 0; 
-	padding:0;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 strong {
-	font-size: 24px;
+  font-size: 24px;
 }
 
 #map {
-	height: 100%;
-	margin-top:0;
-	margin-right: 30%;
-	position: static;
+  height: 100%;
+  margin-top: 0;
+  margin-right: 30%;
+  position: static;
 }
 
-.img-main{
-	height: 300px;
-	width: 300px;
+.img-main {
+  height: 300px;
+  width: 300px;
 }
 
 .img-center {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
-.img-left{
-	height: 20px;
-	width: 40px;
-	float:left;
+.img-left {
+  height: 20px;
+  width: 40px;
+  float: left;
 }
 
 .align-right {
-	width: 160px;
-	float: right;
+  width: 160px;
+  float: right;
 }
 
 .searchBar {
-	position: absolute;
-	left: 0px;
-	width: 30%;
-	height: 15%;
-	z-index: 1;
+  position: absolute;
+  left: 0px;
+  width: 30%;
+  height: 15%;
+  z-index: 1;
 }
 
 .searchMenu {
-	background: #fff; /*white*/
-	border-style: solid;
-	height: 100%;
-	width: 30%;
-	right: 0px;
-	font-size: 14px;
-	position: fixed;
-	z-index: 1;
-	overflow: scroll;
+  background: #fff;
+ /*white*/
+  border-style: solid;
+  height: 100%;
+  width: 30%;
+  right: 0px;
+  font-size: 14px;
+  position: fixed;
+  z-index: 1;
+  overflow: scroll;
 }
 
 .searchMenu a {
-	display: block;
-	color: #000;
-	font-size: 1.1em;
-	font-weight: 300;
+  display: block;
+  color: #000;
+  font-size: 1.1em;
+  font-weight: 300;
 }
 
-@media only screen and (max-width: 750px){
-	.img-center, .img-left{
-		height: 0;
-		width: 0;
-		display: none;
-	}
-	.align-right {
-		width: 250px;
-		margin: 0 auto;
-	}
-	.text-center {
-		padding: 0;
-		font-size: 1em;
-		margin-bottom: 0;
-	}
-	strong {
-		padding: 0;
-		font-size: 1.8em;
-	}
-	.searchMenu a{
-		padding: 0;
-		font-size: .7em;
-		overflow-y: hidden;
-	}
-	.searchBar{
-		width: 70%;
-	}
+@media only screen and (max-width: 750px) {
+  .img-center, .img-left {
+    height: 0;
+    width: 0;
+    display: none;
+  }
+
+  .align-right {
+    width: 250px;
+    margin: 0 auto;
+  }
+
+  .text-center {
+    padding: 0;
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+
+  strong {
+    padding: 0;
+    font-size: 1.8em;
+  }
+
+  .searchMenu a {
+    padding: 0;
+    font-size: .7em;
+    overflow-y: hidden;
+  }
+
+  .searchBar {
+    width: 70%;
+  }
 }

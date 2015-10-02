@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Project 5 - Google Maps</title>
-	<meta name="viewport" content="initial-scale=1.0">
-	<meta charset="utf-8">
-	<link href="css/custom.css" rel="stylesheet">
-	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/spacelab/bootstrap.min.css" rel="stylesheet">
+    <title>Project 5 - Google Maps</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/spacelab/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
 
-	<nav class="searchMenu">
-		<!--added from tutorial http://opensoul.org/2011/06/23/live-search-with-knockoutjs/-->
-		<ul data-bind="template: {name: 'foodLocations', foreach: foodLocations}"></ul>
-		<script type="text/html" id="foodLocations">
-			<li>
-				<a href="#" data-bind="click:$parent.openInfo">
-				<strong data-bind="text: title"></strong>
-				<p><span data-bind="text: location"></span></p>
-				</a>
-				<hr>
-			</li>
-		</script>
-	</nav>
-	<div class="searchBar">
-		<form class="input-group" action="#">
-			<input type="search" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off" class="form-control" placeholder="Japanese and Chinese Food">
-			<span class="input-group-btn">
-				<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-			</span>
-		</form>
-	</div>
+    <nav class="searchMenu">
+        <!--added from tutorial http://opensoul.org/2011/06/23/live-search-with-knockoutjs/-->
+        <ul data-bind="template: {name: 'foodLocations', foreach: foodLocations}"></ul>
+        <script type="text/html" id="foodLocations">
+            <li>
+                <a href="#" data-bind="click:$parent.openInfo">
+                    <strong data-bind="text: title"></strong>
+                    <p><span data-bind="text: location"></span>
+                    </p>
+                </a>
+                <hr>
+            </li>
+        </script>
+    </nav>
+    <div class="searchBar">
+        <form class="input-group" action="#">
+            <input type="search" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off" class="form-control" placeholder="Japanese and Chinese Food">
+            <span class="input-group-btn">
+				<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span>
+            </button>
+            </span>
+        </form>
+    </div>
 
-	<div id="map"></div>
+    <div id="map"></div>
 
-	 <!--Map files, viewmodel, JSON objects for list -->
-  	<script src="js/foodLocations.json"></script>
-  	<script async src="js/map.js"></script>
-  	<script async src="js/viewmodel.js"></script>
-	<!--Google Maps Link-->
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBl81cW_Nm4M_nl5x3qtno511IE_S3GG5o&callback=startMap"></script>
+    <!--Map files, viewmodel, JSON objects for list -->
+    <script src="js/foodLocations.json"></script>
+    <script async src="js/map.js"></script>
+    <script async src="js/viewmodel.js"></script>
+    <!--Google Maps Link-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBl81cW_Nm4M_nl5x3qtno511IE_S3GG5o&callback=startMap"></script>
     <!--CDNs for bootstrap, jquery, knockout, oauth, sha1 files-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-  	<script src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
-  	<script src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
+    <script src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
 </body>
+
 </html>
