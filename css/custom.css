@@ -6,6 +6,7 @@ html, body {
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 strong {
@@ -20,7 +21,7 @@ strong {
 }
 
 .img-main {
-  height: 300px;
+  height: 250px;
   width: 300px;
 }
 
