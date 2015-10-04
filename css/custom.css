@@ -20,24 +20,13 @@ strong {
   position: static;
 }
 
-.img-main {
-  height: 250px;
-  width: 300px;
-}
-
 .img-center {
   margin: 0 auto;
 }
 
-.img-left {
-  height: 20px;
-  width: 40px;
-  float: left;
-}
-
-.align-right {
+.snippet-text {
   width: 160px;
-  float: right;
+  margin: 0 auto;
 }
 
 .searchBar {
@@ -75,7 +64,7 @@ strong {
     display: none;
   }
 
-  .align-right {
+  .snippet-text {
     width: 250px;
     margin: 0 auto;
   }

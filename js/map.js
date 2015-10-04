@@ -172,9 +172,9 @@ function updateInfoWindow(holdData) {
     name = '<h2 class="text-center">' + holdData.name + '</h2><hr>';
     phoneNumber = '<h4 class="text-center">' + holdData.display_phone + '</h4>';
     rating = '<img src=' + holdData.rating_img_url + ' class="img-responsive img-center"><br>';
-    img = '<a href=' + holdData.url + '><img src=' + holdData.image_url + ' class="img-main img-responsive img-center"></a><br>';
-    snipPic = '<div class="img-left"><img src=' + holdData.snippet_image_url + '></div>';
-    snippet = '<p class="align-right">' + holdData.snippet_text + '</p>';
+    img = '<a href=' + holdData.url + '><img src=' + holdData.image_url + ' class="img-responsive img-center"></a><br>';
+    snipPic = '<img src=' + holdData.snippet_image_url + ' class="img-responsive img-center"></div><br>';
+    snippet = '<p class="snippet-text">' + holdData.snippet_text + '</p>';
     holdString = name + phoneNumber + rating + img + snipPic + snippet;
     infowindow.setContent(holdString);
     didYelpCall = true;
