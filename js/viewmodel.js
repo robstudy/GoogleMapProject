@@ -13,16 +13,22 @@ var vm = {
 		//remove markers from map
 		clearMarkers();
 
-		foodPlaces.restaurant.forEach(function(x){
-			if (x.title.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
-				vm.foodLocations.push(x);
+		foodPlaces.restaurant.forEach(function(place){
+			if (place.title.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
+				vm.foodLocations.push(place);
 				//place marker back on the map
-				createMarker(x);
+				createMarker(place);
 			}
 		});
 	}
 };
 
-ko.applyBindings(vm);
-
-vm.query.subscribe(vm.search);
+/*viewmodel is loaded last, check to see if google api is defined. 
+If not, display error message, else, apply bindings*/
+if (typeof google === 'undefined') {
+	$('#map').append("<br><h1><p>Unfortunately, Google Maps is not working and project will not load.</p></h1>");
+	$("#map").append("<br><h1><p>Please verify api connection.</p></h1>");
+} else {
+	ko.applyBindings(vm);
+	vm.query.subscribe(vm.search);
+}

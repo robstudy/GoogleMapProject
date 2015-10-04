@@ -61,12 +61,6 @@ var foodPlaces = {
 			"lng": -119.6749349
 		},
 		{
-			"title": "Japanese Kitchen Steak-Seafood",
-			"location": "711 W Shaw Ave #107, Clovis, CA 93612",
-			"lat": 36.8099738,
-			"lng": -119.7251761
-		},
-		{
 			"title": "Kijima Japanese Restaurant",
 			"location": "300 W Shaw Ave # 100, Clovis, CA 93612",
 			"lat": 36.8077628,

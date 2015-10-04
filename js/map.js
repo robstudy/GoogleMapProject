@@ -169,8 +169,8 @@ function getYelpData(location) {
 //Business passes to updateInfoWindow to convert array into HTML
 function updateInfoWindow(holdData) {
     var name, rating, img, phoneNumber, snippet, snipPic, holdString;
-    name = '<h2 class="text-center">' + holdData.name + '</h2><hr>';
-    phoneNumber = '<h4 class="text-center">' + holdData.display_phone + '</h4>';
+    name = '<h4 class="text-center">' + holdData.name + '</h4><hr>';
+    phoneNumber = '<h6 class="text-center">' + holdData.display_phone + '</h6>';
     rating = '<img src=' + holdData.rating_img_url + ' class="img-responsive img-center"><br>';
     img = '<a href=' + holdData.url + '><img src=' + holdData.image_url + ' class="img-responsive img-center"></a><br>';
     snipPic = '<img src=' + holdData.snippet_image_url + ' class="img-responsive img-center"></div><br>';
