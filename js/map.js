@@ -118,8 +118,8 @@ function getYelpData(location) {
     var auth = {
         consumerKey: "rAf_1-qI-AMixiABXuySng",
         consumerSecret: "t6WlnqnsT6o1yOfhCDlV2bENlbI",
-        accessToken: "vs_eTqnCGp5ri8TAVmSk3OAHDJTqi267",
-        accessTokenSecret: "dJAILnXMfDAklk1swn7pGx0E99E",
+        accessToken: "1ME6wTEfGpFUqxc51iFXOGUqoKMpFa8W",
+        accessTokenSecret: "p5Tv9qAT5ro8xtT7W-z0x84X7kI",
         serviceProvider: {
             signatureMethod: "HMAC-SHA1"
         }
